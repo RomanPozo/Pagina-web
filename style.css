@@ -307,7 +307,29 @@ footer {
     color: white;
     margin-top: 2rem;
 }
+/* Estilos para el aviso legal */
+.contenedor {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    text-align: left;
+}
 
+.contenedor h2 {
+    color: #ff5f6d;
+    margin-bottom: 1.5rem;
+}
+
+.contenedor h3 {
+    color: #333;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.contenedor p {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
 /* ================= MEJORAS PARA MÓVILES ================= */
 @media (max-width: 1024px) {
     .hero {
