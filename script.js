@@ -1,82 +1,98 @@
-// Esperamos a que el DOM esté completamente cargado antes de ejecutar el código
+// Esperar a que el documento HTML esté completamente cargado y listo
 document.addEventListener("DOMContentLoaded", function () {
-    // 📌 INICIALIZACIÓN DE ANIMACIONES AOS
+    /*
+    📌 INICIALIZACIÓN DE ANIMACIONES CON AOS
+    AOS (Animate On Scroll) es una biblioteca para animaciones al hacer scroll
+    Configuramos sus parámetros:
+    - duration: Duración de la animación en milisegundos (1 segundo)
+    - once: La animación solo se reproduce una vez
+    - delay: Retardo antes de que comience la animación
+    - easing: Tipo de suavizado de la animación
+    - mirror: No repetir la animación al volver a scroll
+    */
     AOS.init({
-        duration: 1000, // La animación dura 1 segundo (1000ms)
-        once: true, // La animación solo se ejecuta una vez, no se repite al hacer scroll
+        duration: 1000,         // 1 segundo de duración
+        once: true,             // Animación única por elemento
+        delay: 150,             // 150ms de retardo inicial
+        easing: 'ease-in-out',  // Movimiento suave al empezar y terminar
+        mirror: false           // No animar al hacer scroll inverso
     });
 
-    // 📌 VALIDACIÓN DEL FORMULARIO
-    const form = document.querySelector("form"); // Seleccionamos el formulario en la página
+    // 🎯 BOTÓN "VOLVER ARRIBA"
+    const backToTopButton = document.getElementById("back-to-top");
 
-    // Evento que se ejecuta cuando el usuario intenta enviar el formulario
+    // Detectar cuando el usuario hace scroll
+    window.addEventListener("scroll", function () {
+        // Mostrar el botón solo si el scroll vertical es mayor a 300px
+        if (window.scrollY > 300) {
+            backToTopButton.style.display = "block";
+        } else {
+            backToTopButton.style.display = "none";
+        }
+    });
+
+    // Acción al hacer clic en el botón
+    backToTopButton.addEventListener("click", function () {
+        // Scroll suave hasta la parte superior de la página
+        window.scrollTo({ 
+            top: 0,              // Posición final (0px = inicio)
+            behavior: "smooth"  // Desplazamiento animado
+        });
+    });
+
+    // 📧 VALIDACIÓN DE FORMULARIO
+    const form = document.querySelector("form");
+    
+    // Evento que se ejecuta al enviar el formulario
     form.addEventListener("submit", function (event) {
-        const emailInput = form.querySelector("input[type='email']"); // Seleccionamos el campo de email
-
-        // Si el email no es válido, mostramos una alerta y detenemos el envío del formulario
+        // 1. Buscamos el campo de email en el formulario
+        const emailInput = form.querySelector("input[type='email']");
+        
+        // 2. Verificamos si el email es válido
         if (!validateEmail(emailInput.value)) {
-            event.preventDefault(); // Evita que el formulario se envíe
+            event.preventDefault(); // Detenemos el envío del formulario
             alert("Por favor, introduce un email válido.");
         } else {
             alert("¡Gracias por registrarte! Te contactaremos pronto.");
         }
     });
 
-    // Función para validar el email con una expresión regular
+    // Función para validar formato de email con Expresión Regular
     function validateEmail(email) {
+        // La expresión regular verifica: texto@texto.texto
         return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     }
 
-    // 📌 AVISO DE COOKIES
-    const cookieBanner = document.createElement("div"); // Creamos un contenedor para el banner de cookies
-    cookieBanner.innerHTML = `
-        <div class="cookie-banner">
-            <p>Usamos cookies para mejorar tu experiencia. <a href="#">Más info</a></p>
-            <button id="accept-cookies">Aceptar</button>
-        </div>
-    `;
-
-    // Aplicamos estilos al banner de cookies mediante JavaScript
-    cookieBanner.style.cssText = `
-        position: fixed; /* Fijar el banner en la pantalla */
-        bottom: 20px; /* Posición en la parte inferior */
-        left: 50%; /* Centrar en la pantalla */
-        transform: translateX(-50%); /* Ajuste fino para centrar */
-        background: rgba(0, 0, 0, 0.8); /* Fondo oscuro semitransparente */
-        color: white;
-        padding: 15px;
-        border-radius: 5px;
-        font-size: 14px;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    `;
-
-    document.body.appendChild(cookieBanner); // Agregamos el banner al final del <body>
-
-    // Evento para ocultar el banner cuando el usuario hace clic en "Aceptar"
-    document.getElementById("accept-cookies").addEventListener("click", function () {
-        cookieBanner.style.display = "none"; // Oculta el banner de cookies
-    });
-
-    // 📌 EFECTO DE VIBRACIÓN EN BOTONES AL PASAR EL MOUSE
-    document.querySelectorAll(".btn, .contacto button").forEach((btn) => {
-        btn.addEventListener("mouseenter", () => {
-            btn.style.transform = "scale(1.1)"; // Aumenta ligeramente el tamaño del botón
-            btn.style.transition = "transform 0.2s ease"; // Transición suave de 0.2 segundos
-        });
-        btn.addEventListener("mouseleave", () => {
-            btn.style.transform = "scale(1)"; // Regresa al tamaño original
-        });
-    });
-
-    // 📌 EFECTO PARALLAX EN LA IMAGEN PRINCIPAL AL HACER SCROLL
+    // 🌄 EFECTO PARALLAX EN LA IMAGEN PRINCIPAL
     window.addEventListener("scroll", function () {
-        const img = document.querySelector(".hero-img img"); // Seleccionamos la imagen dentro del contenedor .hero-img
-
-        if (img) { // Verificamos que la imagen exista antes de aplicar el efecto
-            let scrollY = window.scrollY; // Obtenemos la posición actual del scroll
-            img.style.transform = `translateY(${scrollY * 0.2}px)`; // Movemos la imagen suavemente hacia abajo
+        // Seleccionamos la imagen de la sección hero
+        const img = document.querySelector(".hero-img img");
+        
+        if (img) { // Si existe la imagen...
+            // Calculamos la posición actual del scroll
+            let scrollY = window.scrollY;
+            
+            // Aplicamos transformaciones:
+            // - translateY: Mover verticalmente (20% del scroll)
+            // - rotateZ: Rotación gradual (5% del scroll)
+            img.style.transform = `
+                translateY(${scrollY * 0.2}px) 
+                rotateZ(${scrollY * 0.05}deg)
+            `;
         }
+    });
+
+    // 🖱️ SCROLL SUAVE PARA ENLACES DE NAVEGACIÓN
+    // Seleccionamos todos los enlaces que empiezan con #
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        // A cada enlace le añadimos un evento click
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault(); // Evitamos el comportamiento normal del enlace
+            
+            // Hacemos scroll suave hasta el elemento objetivo
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth' // Animación de desplazamiento
+            });
+        });
     });
 });
