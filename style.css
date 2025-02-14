@@ -18,7 +18,7 @@ header {
 /* Sección Hero */
 .hero {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 40px;
@@ -27,12 +27,35 @@ header {
 
 .hero-text {
     max-width: 50%;
+    text-align: center;
 }
 
 .hero-img img {
     width: 300px;
     border-radius: 10px;
 }
+
+/* Para pantallas grandes */
+@media (min-width: 768px) {
+    .hero {
+        flex-direction: row;  /* Pone la imagen a la izquierda y el texto a la derecha */
+        justify-content: space-between;
+    }
+
+    .hero-text {
+        text-align: left;  /* Alinea el texto a la izquierda en pantallas grandes */
+    }
+
+    .hero-img {
+        flex: 1;
+        text-align: center;
+    }
+
+    .hero-img img {
+        max-width: 400px;
+    }
+}
+
 
 /* Botón */
 .btn {
