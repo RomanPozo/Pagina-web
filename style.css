@@ -10,11 +10,81 @@ body {
     color: #333;
 }
 
-/* Contacto Superior Derecha */
+/* ================= HEADER ACTUALIZADO ================= */
+/* 📌 HEADER ROMÁNTICO CON CORAZONES ANIMADOS */
+header {
+    background: #ff5f6d;
+    padding: 5rem 0;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Corazones grandes de fondo */
+header::before,
+header::after {
+    content: '💖';
+    position: absolute;
+    font-size: 8rem;
+    opacity: 0.15;
+    top: 50%;
+    transform: translateY(-50%);
+    animation: float 3s ease-in-out infinite;
+    z-index: 1;
+}
+
+header::before {
+    left: 15%;
+}
+
+header::after {
+    right: 15%;
+}
+
+/* Animación de flotación */
+@keyframes float {
+    0%, 100% { 
+        transform: translateY(-50%) rotate(0deg);
+    }
+    50% { 
+        transform: translateY(-55%) rotate(10deg);
+    }
+}
+
+/* Título principal */
+header h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 5.5rem;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 2;
+    display: inline-block;
+    padding: 0 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+/* Subtítulo */
+header p {
+    font-size: 1.5rem;
+    color: #fff;
+    letter-spacing: 2px;
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Info de contacto ACTUALIZADA */
 .contact-info {
     position: absolute;
     top: 20px;
     right: 20px;
+    z-index: 3;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -22,7 +92,8 @@ body {
 }
 
 .contact-info a {
-    color: white;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
     text-decoration: none;
     font-size: 0.9rem;
     transition: color 0.3s ease;
@@ -32,6 +103,7 @@ body {
     color: #ff8b94;
 }
 
+/* ================= RESTO DEL CSS ================= */
 /* Barra de Navegación */
 nav {
     background-color: #ff5f6d;
@@ -57,14 +129,6 @@ nav ul li a {
 
 nav ul li a:hover {
     color: #ff8b94;
-}
-
-header {
-    text-align: center;
-    padding: 2rem 0;
-    background-color: #ff5f6d;
-    color: white;
-    position: relative;
 }
 
 /* Efectos Hover en Pasos */
@@ -109,16 +173,7 @@ header {
     background-color: #ff8b94;
 }
 
-/* Resto del CSS existente (se mantiene igual) */
-h1 {
-    font-size: 3rem;
-    font-weight: 600;
-}
-
-p {
-    font-size: 1.2rem;
-}
-
+/* Resto del CSS */
 .hero {
     display: flex;
     justify-content: space-between;
@@ -250,7 +305,9 @@ footer {
     margin-top: 2rem;
 }
 
+/* ================= MEJORAS PARA MÓVILES ================= */
 @media (max-width: 768px) {
+    /* Ajustes generales */
     .hero {
         flex-direction: column;
         text-align: center;
@@ -266,6 +323,20 @@ footer {
         margin-top: 1rem;
     }
 
+    /* Ajustes header */
+    header::before,
+    header::after {
+        font-size: 5rem;
+        left: 10%;
+        right: 10%;
+    }
+
+    header h1 {
+        font-size: 4rem;
+        padding: 0 1rem;
+    }
+
+    /* Otros ajustes */
     .como-funciona {
         padding: 2rem;
     }
@@ -303,6 +374,19 @@ footer {
 }
 
 @media (max-width: 480px) {
+    /* Ajustes header móvil pequeño */
+    header h1 {
+        font-size: 3.5rem;
+    }
+
+    header::before,
+    header::after {
+        font-size: 3.5rem;
+        left: 5%;
+        right: 5%;
+    }
+
+    /* Otros ajustes */
     h1 {
         font-size: 2.5rem;
     }
@@ -328,5 +412,6 @@ footer {
         position: static;
         text-align: center;
         margin-bottom: 1rem;
+        align-items: center;
     }
 }
