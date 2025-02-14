@@ -5,19 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alianzas del Amor</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script> <!-- Para efectos de desplazamiento -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"> <!-- Fuente moderna -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-
     <!-- Header -->
     <header>
+        <div class="contact-info">
+            <a href="mailto:info@alianzasdelamor.com">📧 info@alianzasdelamor.com</a>
+            <a href="tel:+123456789">📞 +123 456 789</a>
+        </div>
         <h1>💖 Alianzas del Amor 💖</h1>
         <p>Conectando corazones y creando amistades</p>
     </header>
 
+    <!-- Barra de Navegación -->
+    <nav>
+        <ul>
+            <li><a href="#hero">Inicio</a></li>
+            <li><a href="#como-funciona">Cómo Funciona</a></li>
+            <li><a href="#testimonios">Testimonios</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+
     <!-- Sección Hero -->
-    <section class="hero" data-aos="fade-up">
+    <section class="hero" id="hero" data-aos="fade-up" data-aos-delay="100">
         <div class="hero-text">
             <h2>Encuentra tu pareja o una gran amistad</h2>
             <p>Regístrate y déjanos encontrar a la persona ideal para ti.</p>
@@ -29,20 +42,20 @@
     </section>
 
     <!-- Sección de Cómo Funciona -->
-    <section class="como-funciona" data-aos="fade-up">
+    <section class="como-funciona" id="como-funciona" data-aos="fade-up" data-aos-delay="150">
         <h2>¿Cómo funciona?</h2>
         <div class="pasos">
-            <div class="paso">
+            <div class="paso" data-aos="zoom-in" data-aos-delay="200">
                 <img src="imagenes/formulario.jpg" alt="Formulario">
                 <h3>1. Cuéntanos sobre ti</h3>
                 <p>Rellena un formulario con información sobre tus gustos y personalidad.</p>
             </div>
-            <div class="paso">
+            <div class="paso" data-aos="zoom-in" data-aos-delay="250">
                 <img src="imagenes/conexion.jpg" alt="Conexión">
                 <h3>2. Buscamos compatibilidades</h3>
                 <p>Analizamos tu perfil y encontramos personas que podrían ser compatibles contigo.</p>
             </div>
-            <div class="paso">
+            <div class="paso" data-aos="zoom-in" data-aos-delay="300">
                 <img src="imagenes/cita.jpg" alt="Cita">
                 <h3>3. ¡Conecta con alguien especial!</h3>
                 <p>Te ponemos en contacto con tu mejor match y de ahí en adelante, ¡es historia!</p>
@@ -51,38 +64,37 @@
     </section>
 
     <!-- Testimonios -->
-    <section class="testimonios" data-aos="fade-up">
+    <section class="testimonios" id="testimonios" data-aos="fade-up" data-aos-delay="100">
         <h2>Historias de éxito</h2>
-        <div class="testimonio">
+        <div class="testimonio" data-aos="fade-right" data-aos-delay="150">
+            <img src="imagenes/maria_jorge.jpg" alt="María y Jorge">
             <p>💬 "Gracias a Alianzas del Amor, conocí a mi pareja en solo dos meses. ¡Nunca había sido tan fácil!"</p>
             <h4>- María y Jorge</h4>
         </div>
-        <div class="testimonio">
-            <p>💬 "Solo quería encontrar amigos con intereses similares, y terminé encontrando a mi mejor amigo." </p>
+        <div class="testimonio" data-aos="fade-left" data-aos-delay="200">
+            <img src="imagenes/carlos_g.jpg" alt="Carlos G.">
+            <p>💬 "Solo quería encontrar amigos con intereses similares, y terminé encontrando a mi mejor amigo."</p>
             <h4>- Carlos G.</h4>
         </div>
     </section>
 
     <!-- Sección de Contacto -->
-    <section class="contacto" id="contacto" data-aos="fade-up">
+    <section class="contacto" id="contacto" data-aos="fade-up" data-aos-delay="100">
         <h2>Únete a Alianzas del Amor</h2>
         <p>Déjanos tu correo y te explicaremos cómo empezar.</p>
-        <!-- Formulario con acción a Formspree -->
         <form action="https://formspree.io/f/movjkqdb" method="POST">
             <input type="email" name="email" placeholder="Tu correo electrónico" required>
             <button type="submit">Enviar</button>
         </form>
     </section>
 
+    <!-- Botón Volver Arriba -->
+    <button id="back-to-top" title="Volver arriba">↑</button>
+
     <footer>
         <p>© 2025 Alianzas del Amor | Todos los derechos reservados.</p>
     </footer>
 
-    <script>
-    AOS.init(); // Iniciar los efectos de desplazamiento
-</script>
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
-
-
