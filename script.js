@@ -70,7 +70,7 @@ window.addEventListener("scroll", function () {
     if (img) {
         let scrollY = window.scrollY;
         // Solo aplicamos desplazamiento vertical (quitamos rotateZ)
-        img.style.transform = `translateY(${scrollY * 0.2}px)`; 
+        img.style.transform = `translateY(${scrollY * 0.1}px)`; 
     }
 });
 
