@@ -5,15 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alianzas del Amor</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script> <!-- Para efectos de desplazamiento -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"> <!-- Fuente moderna -->
 </head>
 <body>
+
+    <!-- Header -->
     <header>
         <h1>💖 Alianzas del Amor 💖</h1>
         <p>Conectando corazones y creando amistades</p>
     </header>
 
     <!-- Sección Hero -->
-    <section class="hero">
+    <section class="hero" data-aos="fade-up">
         <div class="hero-text">
             <h2>Encuentra tu pareja o una gran amistad</h2>
             <p>Regístrate y déjanos encontrar a la persona ideal para ti.</p>
@@ -25,7 +29,7 @@
     </section>
 
     <!-- Sección de Cómo Funciona -->
-    <section class="como-funciona">
+    <section class="como-funciona" data-aos="fade-up">
         <h2>¿Cómo funciona?</h2>
         <div class="pasos">
             <div class="paso">
@@ -47,7 +51,7 @@
     </section>
 
     <!-- Testimonios -->
-    <section class="testimonios">
+    <section class="testimonios" data-aos="fade-up">
         <h2>Historias de éxito</h2>
         <div class="testimonio">
             <p>💬 "Gracias a Alianzas del Amor, conocí a mi pareja en solo dos meses. ¡Nunca había sido tan fácil!"</p>
@@ -60,12 +64,11 @@
     </section>
 
     <!-- Sección de Contacto -->
-    <section class="contacto" id="contacto">
+    <section class="contacto" id="contacto" data-aos="fade-up">
         <h2>Únete a Alianzas del Amor</h2>
         <p>Déjanos tu correo y te explicaremos cómo empezar.</p>
         <!-- Formulario con acción a Formspree -->
         <form action="https://formspree.io/f/movjkqdb" method="POST">
-            <!-- Campo de correo electrónico -->
             <input type="email" name="email" placeholder="Tu correo electrónico" required>
             <button type="submit">Enviar</button>
         </form>
@@ -74,6 +77,11 @@
     <footer>
         <p>© 2025 Alianzas del Amor | Todos los derechos reservados.</p>
     </footer>
+
+    <script>
+        AOS.init(); // Iniciar los efectos de desplazamiento
+    </script>
 </body>
 </html>
+
 
