@@ -63,8 +63,10 @@
     <section class="contacto" id="contacto">
         <h2>Únete a Alianzas del Amor</h2>
         <p>Déjanos tu correo y te explicaremos cómo empezar.</p>
-        <form>
-            <input type="email" placeholder="Tu correo electrónico" required>
+        <!-- Formulario con acción a Formspree -->
+        <form action="https://formspree.io/f/movjkqdb" method="POST">
+            <!-- Campo de correo electrónico -->
+            <input type="email" name="email" placeholder="Tu correo electrónico" required>
             <button type="submit">Enviar</button>
         </form>
     </section>
