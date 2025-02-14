@@ -1,26 +1,122 @@
+/* Estilos generales */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     text-align: center;
-    background-color: #F5E1DA;
-    color: #2C2C2C;
+    background-color: #FCE4EC;
+    color: #333;
+    margin: 0;
 }
 
+/* Encabezado */
 header {
-    background-color: #F7CAC9;
-    padding: 20px;
-}
-
-section {
-    margin: 20px;
-    padding: 20px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-footer {
-    margin-top: 20px;
-    padding: 10px;
-    background-color: #2C2C2C;
+    background-color: #F06292;
     color: white;
+    padding: 20px;
+    font-size: 1.5rem;
+}
+
+/* Sección Hero */
+.hero {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    background-color: #F8BBD0;
+}
+
+.hero-text {
+    max-width: 50%;
+}
+
+.hero-img img {
+    width: 300px;
+    border-radius: 10px;
+}
+
+/* Botón */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #D81B60;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.btn:hover {
+    background-color: #AD1457;
+}
+
+/* Sección "Cómo Funciona" */
+.como-funciona {
+    padding: 40px;
+    background-color: #FFF;
+}
+
+.pasos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.paso {
+    width: 30%;
+    padding: 20px;
+}
+
+.paso img {
+    width: 100px;
+    border-radius: 10px;
+}
+
+/* Testimonios */
+.testimonios {
+    background-color: #F48FB1;
+    padding: 40px;
+}
+
+.testimonio {
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+/* Contacto */
+.contacto {
+    padding: 40px;
+    background-color: #FFF;
+}
+
+.contacto form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.contacto input {
+    padding: 10px;
+    border: 1px solid #D81B60;
+    border-radius: 5px;
+}
+
+.contacto button {
+    background-color: #D81B60;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contacto button:hover {
+    background-color: #AD1457;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    margin-top: 20px;
 }
