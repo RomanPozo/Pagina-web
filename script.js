@@ -63,24 +63,16 @@ document.addEventListener("DOMContentLoaded", function () {
         return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     }
 
-    // 🌄 EFECTO PARALLAX EN LA IMAGEN PRINCIPAL
-    window.addEventListener("scroll", function () {
-        // Seleccionamos la imagen de la sección hero
-        const img = document.querySelector(".hero-img img");
-        
-        if (img) { // Si existe la imagen...
-            // Calculamos la posición actual del scroll
-            let scrollY = window.scrollY;
-            
-            // Aplicamos transformaciones:
-            // - translateY: Mover verticalmente (20% del scroll)
-            // - rotateZ: Rotación gradual (5% del scroll)
-            img.style.transform = `
-                translateY(${scrollY * 0.2}px) 
-                rotateZ(${scrollY * 0.05}deg)
-            `;
-        }
-    });
+   // 🌄 EFECTO PARALLAX EN LA IMAGEN PRINCIPAL (VERSIÓN SIMPLIFICADA)
+window.addEventListener("scroll", function () {
+    const img = document.querySelector(".hero-img img");
+    
+    if (img) {
+        let scrollY = window.scrollY;
+        // Solo aplicamos desplazamiento vertical (quitamos rotateZ)
+        img.style.transform = `translateY(${scrollY * 0.2}px)`; 
+    }
+});
 
     // 🖱️ SCROLL SUAVE PARA ENLACES DE NAVEGACIÓN
     // Seleccionamos todos los enlaces que empiezan con #
