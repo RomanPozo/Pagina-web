@@ -1,5 +1,8 @@
 // Esperar a que el documento HTML esté completamente cargado y listo
 document.addEventListener("DOMContentLoaded", function () {
+    // ⚠️ CÓDIGO NUEVO PARA FIJAR SCROLL
+    window.scrollTo(0, 0);
+    history.scrollRestoration = "manual";
     /*
     📌 INICIALIZACIÓN DE ANIMACIONES CON AOS
     AOS (Animate On Scroll) es una biblioteca para animaciones al hacer scroll
