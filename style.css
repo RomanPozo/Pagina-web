@@ -307,6 +307,62 @@ footer {
     color: white;
     margin-top: 2rem;
 }
+
+/* SECCIÓN DE PRECIOS */
+.precios {
+    padding: 4rem 2rem;
+    background: #fff8f9;
+    text-align: center;
+}
+
+.precios h2 {
+    font-size: 2.8rem;
+    color: #ff5f6d;
+    margin-bottom: 2rem;
+}
+
+/* Ajuste para mostrar solo un plan */
+.plan.unico {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    max-width: 400px;
+    margin: 0 auto;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.plan.unico:hover {
+    transform: translateY(-10px);
+}
+
+.precio {
+    font-size: 2.5rem;
+    color: #ff5f6d;
+    font-weight: 700;
+    margin: 1rem 0;
+}
+
+.plan ul {
+    list-style: none;
+    text-align: left;
+    margin: 1.5rem 0;
+}
+
+.plan li {
+    padding: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.plan li:before {
+    content: "✓";
+    color: #ff5f6d;
+    font-weight: bold;
+}
+
 /* Estilos para el aviso legal */
 .contenedor {
     max-width: 800px;
@@ -435,6 +491,14 @@ footer {
     .btn {
         font-size: 1rem;
         padding: 10px 15px;
+    }
+
+    .precio {
+        font-size: 2rem;
+    }
+
+    .plan.unico {
+        padding: 1.5rem;
     }
 
     .testimonios h2 {
